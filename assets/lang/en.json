@@ -1,4 +1,7 @@
 {
     "app-title": "Debt Register",
-    "app-slogan": "Keep track of your clients debts, effortlessly!"
+    "app-slogan": "Keep track of your clients debts, effortlessly!",
+    "greet-with-owner": "Welcome",
+    "greet-without-owner": "I hope you're having a good day",
+    "biggest-debts": "biggest-debts"
 }

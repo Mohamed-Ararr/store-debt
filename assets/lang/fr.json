@@ -1,4 +1,7 @@
 {
     "app-title": "dettes registre",
-    "app-slogan": "Gardez une trace des dettes de vos clients, sans effort!"
+    "app-slogan": "Gardez une trace des dettes de vos clients, sans effort!",
+    "greet-with-owner": "Bienvenue",
+    "greet-without-owner": "j'espère que vous avez une bonne journée",
+    "biggest-debts": "plus grosses dettes"
 }

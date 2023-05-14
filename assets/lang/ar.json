@@ -1,4 +1,7 @@
 {
     "app-title": "دفتر الديون",
-    "app-slogan": "تتبع ديون عملائك دون عناء!"
+    "app-slogan": "تتبع ديون عملائك دون عناء!",
+    "greet-with-owner": "مرحبا",
+    "greet-without-owner": "أرجو أن تحظى بيوم رائع",
+    "biggest-debts": "أكبر الديون"
 }
