@@ -40,6 +40,9 @@ class DebtApp extends StatelessWidget {
         return supportedLang.first;
       },
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.purpleColor,
+        ),
         fontFamily: "Tajawal",
         canvasColor: AppColors.purpleColor,
       ),
