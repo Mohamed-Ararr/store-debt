@@ -6,8 +6,16 @@ class SplashViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/appLogo.png",
+              scale: 1.5,
+            ),
+            Text("مرحبا بك في تطبيقنا", style: TextStyle(fontSize: 35)),
+          ],
+        ),
       ),
     );
   }

@@ -1,1 +1,1 @@
-import 'package:flutter/material.dart';
+const String appLogo = "assets/images/appLogo.svg";
