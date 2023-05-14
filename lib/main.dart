@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:storedebt/Core/AppLocal.dart';
+import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 
 import 'Features/Splash Screen/Presentation/SplashView.dart';
@@ -14,7 +15,8 @@ class DebtApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRoutes.routes,
       localizationsDelegates: [
         AppLocale.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -41,7 +43,6 @@ class DebtApp extends StatelessWidget {
         fontFamily: "Tajawal",
         canvasColor: AppColors.purpleColor,
       ),
-      home: SplashView(),
     );
   }
 }

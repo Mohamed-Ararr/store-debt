@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Features/Splash%20Screen/Presentation/Widgets/AppLogoAndTitle.dart';
 import 'package:storedebt/Features/Splash%20Screen/Presentation/Widgets/AppSlogan.dart';
 
-import '../../../../Core/AppLocal.dart';
-import '../../../../Core/Style Utils/AppFonts.dart';
-
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 3),
+      () => GoRouter.of(context).push(AppRoutes.homeView),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
