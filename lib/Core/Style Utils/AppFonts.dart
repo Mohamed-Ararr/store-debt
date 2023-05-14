@@ -6,4 +6,9 @@ class AppFonts {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
+
+  static TextStyle font_18_white = TextStyle(
+    fontSize: 18,
+    color: Colors.white,
+  );
 }

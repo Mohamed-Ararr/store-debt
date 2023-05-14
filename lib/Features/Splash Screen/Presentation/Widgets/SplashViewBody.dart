@@ -31,10 +31,7 @@ class SplashViewBody extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * .8,
                 child: Text(
                   "${getLang(context, "app-slogan")}",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
+                  style: AppFonts.font_18_white,
                   textAlign: TextAlign.center,
                 ),
               ),
