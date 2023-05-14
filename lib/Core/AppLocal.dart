@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 class AppLocale {
   Locale locale;
 
-  Map<String, String>? _loadedLocalizedValues;
+  Map<String, String> _loadedLocalizedValues = {};
 
   AppLocale(this.locale);
 
@@ -22,7 +22,7 @@ class AppLocale {
   }
 
   String getTranslated(String key) {
-    return _loadedLocalizedValues![key]!;
+    return _loadedLocalizedValues[key]!;
   }
 
   static const LocalizationsDelegate<AppLocale> delegate = _AppLocalDelegate();

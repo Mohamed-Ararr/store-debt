@@ -26,6 +26,7 @@ class DebtApp extends StatelessWidget {
         Locale("en", "US"),
         // Locale("fr", "FR"),
       ],
+      locale: Locale("en", "US"),
       localeResolutionCallback: (currentLang, supportedLang) {
         if (currentLang != null) {
           for (Locale local in supportedLang) {
