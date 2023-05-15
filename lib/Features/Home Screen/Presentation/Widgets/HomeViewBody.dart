@@ -8,6 +8,7 @@ import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientInfo.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientSmallCard.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/PriceCard.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/SmallClientListView.dart';
 
 import 'GreetAndSearchCard.dart';
 
@@ -49,17 +50,7 @@ class HomeViewBody extends StatelessWidget {
                 style: AppFonts.regular20BoldWhite,
               ),
               SizedBox(height: 10),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.215,
-                child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return ClientSmallCard();
-                  },
-                ),
-              ),
+              SmallClientListView(),
             ],
           ),
         ),
