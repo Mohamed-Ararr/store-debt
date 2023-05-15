@@ -19,7 +19,6 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: AddNewDebtButton(),
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -29,10 +28,13 @@ class HomeViewBody extends StatelessWidget {
         ),
         actions: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 18),
+            margin: EdgeInsets.symmetric(horizontal: 15),
             child: InkWell(
               onTap: () {},
-              child: Icon(FontAwesomeIcons.user),
+              child: Icon(
+                FontAwesomeIcons.magnifyingGlass,
+                size: 20,
+              ),
             ),
           ),
         ],

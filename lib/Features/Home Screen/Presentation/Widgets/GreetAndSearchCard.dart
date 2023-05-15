@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/AddNewDebtButton.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/AppLocal.dart';
@@ -27,21 +28,7 @@ class GreetAndSearchCard extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: Colors.white,
-            ),
-            child: InkWell(
-              onTap: () {},
-              child: Icon(
-                FontAwesomeIcons.magnifyingGlass,
-                size: 20,
-                color: AppColors.purpleColor,
-              ),
-            ),
-          ),
+          AddNewDebtButton(),
         ],
       ),
     );

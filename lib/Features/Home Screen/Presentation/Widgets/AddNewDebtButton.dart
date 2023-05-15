@@ -9,7 +9,7 @@ class AddNewDebtButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: AppColors.beigeColor,
+      backgroundColor: AppColors.whiteColor,
       onPressed: () {},
       child: Icon(FontAwesomeIcons.plus, color: Colors.black),
     );
