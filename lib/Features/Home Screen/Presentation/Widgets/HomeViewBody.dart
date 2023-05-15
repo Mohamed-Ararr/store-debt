@@ -7,11 +7,15 @@ import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientInfo.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientSmallCard.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClinetAvatar.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/PriceCard.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/SmallClientListView.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/StoreDebtsText.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/TallClientCard.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/TallClientCardListView.dart';
 
 import 'GreetAndSearchCard.dart';
+import 'TallClientInfo.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -55,6 +59,7 @@ class HomeViewBody extends StatelessWidget {
               SizedBox(height: 25),
               StoreDebtsText(),
               SizedBox(height: 10),
+              TallClientCardListView(),
             ],
           ),
         ),

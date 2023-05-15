@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 
 class AppFonts {
   static TextStyle appTitleStyle = const TextStyle(
@@ -39,7 +40,17 @@ class AppFonts {
     fontWeight: FontWeight.bold,
   );
 
+  static TextStyle defaultWithBoldWhite = TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+
   static TextStyle font_13 = TextStyle(
     fontSize: 13,
+  );
+
+  static TextStyle font_13_grey = TextStyle(
+    fontSize: 13,
+    color: AppColors.greyColor,
   );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClinetAvatar.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
@@ -24,19 +25,7 @@ class ClientInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              padding: EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                border: Border.all(),
-                color: AppColors.beigeColor,
-                borderRadius: bRadiusHalf,
-              ),
-              child: Image.asset(
-                clientAvatar,
-                scale: 1.1,
-              ),
-            ),
+            ClientAvatar(),
             Text(
               "محمد اسلام عرعار",
               style: AppFonts.defaultWithBold,
