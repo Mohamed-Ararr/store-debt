@@ -5,6 +5,9 @@ import 'package:storedebt/Constants.dart';
 import 'package:storedebt/Core/AppLocal.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientInfo.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientSmallCard.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/PriceCard.dart';
 
 import 'GreetAndSearchCard.dart';
 
@@ -36,11 +39,27 @@ class HomeViewBody extends StatelessWidget {
         child: Padding(
           padding: paddingLR15,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 20),
               GreetAndSearchCard(),
               SizedBox(height: 20),
-              Text("${getLang(context, 'biggest-debts')}")
+              Text(
+                "${getLang(context, 'biggest-debts')}",
+                style: AppFonts.regular20BoldWhite,
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.215,
+                child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return ClientSmallCard();
+                  },
+                ),
+              ),
             ],
           ),
         ),

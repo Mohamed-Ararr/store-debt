@@ -6,4 +6,5 @@ class AppColors {
   static Color lightRed = Color(0xffE87565);
   static Color redColor = Color(0xffFD372A);
   static Color beigeColor = Color(0xffF9BB98);
+  static Color whiteColor = Colors.white;
 }
