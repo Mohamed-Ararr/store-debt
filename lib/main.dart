@@ -4,8 +4,6 @@ import 'package:storedebt/Core/AppLocal.dart';
 import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 
-import 'Features/Splash Screen/Presentation/SplashView.dart';
-
 void main() {
   runApp(const DebtApp());
 }

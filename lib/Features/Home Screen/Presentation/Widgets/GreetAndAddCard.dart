@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/AddNewDebtButton.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/AppLocal.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
 
-class GreetAndSearchCard extends StatelessWidget {
-  const GreetAndSearchCard({super.key});
+class GreetAndAddCard extends StatelessWidget {
+  const GreetAndAddCard({super.key});
 
   @override
   Widget build(BuildContext context) {

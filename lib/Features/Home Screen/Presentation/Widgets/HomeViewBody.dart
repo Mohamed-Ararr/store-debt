@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/CustomDrawer.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/DebtsStats.dart';
 
 import '../../../../Core/AppLocal.dart';
 import '../../../../Core/Style%20Utils/AppFonts.dart';
+import 'OwnerCard.dart';
 import 'TallClientCardListView.dart';
 
 import '../../../../Constants.dart';
-import 'AddNewDebtButton.dart';
-import 'GreetAndSearchCard.dart';
+import 'GreetAndAddCard.dart';
 import 'SmallClientListView.dart';
 import 'StoreDebtsText.dart';
 
@@ -39,7 +41,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ],
       ),
-      drawer: Container(),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Padding(
@@ -48,7 +50,7 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 25),
-              GreetAndSearchCard(),
+              GreetAndAddCard(),
               SizedBox(height: 25),
               Text(
                 "${getLang(context, 'biggest-debts')}",
