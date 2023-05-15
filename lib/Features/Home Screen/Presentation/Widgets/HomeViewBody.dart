@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/DebtsStats.dart';
 
 import '../../../../Core/AppLocal.dart';
 import '../../../../Core/Style%20Utils/AppFonts.dart';
@@ -37,6 +39,7 @@ class HomeViewBody extends StatelessWidget {
       ),
       drawer: Container(),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: paddingLR15,
           child: Column(
@@ -61,21 +64,10 @@ class HomeViewBody extends StatelessWidget {
                 style: AppFonts.regular20BoldWhite,
               ),
               SizedBox(height: 10),
-              Row(
-                children: [
-                  Text(
-                    "الديون",
-                    style: AppFonts.defaultWithBoldWhite,
-                  ),
-                  Stack(
-                    children: [
-                      Container(),
-                      Container(),
-                    ],
-                  ),
-                  Text("75%"),
-                ],
-              ),
+              DebtsStats(title: "الديون", percentageBar: .5),
+              SizedBox(height: 10),
+              DebtsStats(title: "الدفع", percentageBar: .4),
+              SizedBox(height: 20),
             ],
           ),
         ),
