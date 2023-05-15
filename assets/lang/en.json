@@ -3,5 +3,7 @@
     "app-slogan": "Keep track of your clients debts, effortlessly!",
     "greet-with-owner": "Welcome",
     "greet-without-owner": "I hope you're having a good day",
-    "biggest-debts": "biggest-debts"
+    "biggest-debts": "biggest-debts",
+    "store-debts": "Store debts",
+    "see-all-debts": "See all"
 }

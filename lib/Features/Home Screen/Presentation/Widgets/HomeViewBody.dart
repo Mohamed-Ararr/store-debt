@@ -9,6 +9,7 @@ import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientInfo
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientSmallCard.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/PriceCard.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/SmallClientListView.dart';
+import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/StoreDebtsText.dart';
 
 import 'GreetAndSearchCard.dart';
 
@@ -42,15 +43,18 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               GreetAndSearchCard(),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               Text(
                 "${getLang(context, 'biggest-debts')}",
                 style: AppFonts.regular20BoldWhite,
               ),
               SizedBox(height: 10),
               SmallClientListView(),
+              SizedBox(height: 25),
+              StoreDebtsText(),
+              SizedBox(height: 10),
             ],
           ),
         ),

@@ -3,5 +3,7 @@
     "app-slogan": "Gardez une trace des dettes de vos clients, sans effort!",
     "greet-with-owner": "Bienvenue",
     "greet-without-owner": "j'espère que vous avez une bonne journée",
-    "biggest-debts": "plus grosses dettes"
+    "biggest-debts": "plus grosses dettes",
+    "store-debts": "Dettes du magasin",
+    "see-all-debts": "Parcourir tout"
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
@@ -38,9 +39,7 @@ class ClientInfo extends StatelessWidget {
             ),
             Text(
               "محمد اسلام عرعار",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppFonts.defaultWithBold,
             ),
             Text("مدفوع"),
             Text("25 ديسمبر 2023"),

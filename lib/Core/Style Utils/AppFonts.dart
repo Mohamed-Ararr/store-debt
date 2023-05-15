@@ -23,4 +23,23 @@ class AppFonts {
     fontSize: 18,
     color: Colors.white,
   );
+
+  static TextStyle font_18_black_bold = TextStyle(
+    fontSize: 18,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle font_14_grey = TextStyle(
+    fontSize: 14,
+    color: Color.fromARGB(255, 151, 151, 151),
+  );
+
+  static TextStyle defaultWithBold = TextStyle(
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle font_13 = TextStyle(
+    fontSize: 13,
+  );
 }
