@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:storedebt/Constants.dart';
-import 'package:storedebt/Core/AppLocal.dart';
-import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
-import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientInfo.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClientSmallCard.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClinetAvatar.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/PriceCard.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/SmallClientListView.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/StoreDebtsText.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/TallClientCard.dart';
-import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/TallClientCardListView.dart';
 
+import '../../../../Core/AppLocal.dart';
+import '../../../../Core/Style%20Utils/AppFonts.dart';
+import 'TallClientCardListView.dart';
+
+import '../../../../Constants.dart';
+import 'AddNewDebtButton.dart';
 import 'GreetAndSearchCard.dart';
-import 'TallClientInfo.dart';
+import 'SmallClientListView.dart';
+import 'StoreDebtsText.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -23,6 +17,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: AddNewDebtButton(),
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -60,6 +55,27 @@ class HomeViewBody extends StatelessWidget {
               StoreDebtsText(),
               SizedBox(height: 10),
               TallClientCardListView(),
+              SizedBox(height: 25),
+              Text(
+                "${getLang(context, "debt-stats")}",
+                style: AppFonts.regular20BoldWhite,
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Text(
+                    "الديون",
+                    style: AppFonts.defaultWithBoldWhite,
+                  ),
+                  Stack(
+                    children: [
+                      Container(),
+                      Container(),
+                    ],
+                  ),
+                  Text("75%"),
+                ],
+              ),
             ],
           ),
         ),
