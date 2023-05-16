@@ -11,7 +11,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+        margin: EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * .7,
         decoration: BoxDecoration(
           borderRadius: bRadius10,
