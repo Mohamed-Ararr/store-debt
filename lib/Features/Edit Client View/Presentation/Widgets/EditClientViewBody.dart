@@ -5,6 +5,12 @@ class EditClientViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("تعديل بيانات الزبون"),
+        centerTitle: true,
+        elevation: 0,
+      ),
+    );
   }
 }

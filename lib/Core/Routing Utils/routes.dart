@@ -1,4 +1,5 @@
 import "package:go_router/go_router.dart";
+import "package:storedebt/Features/Edit%20Client%20View/Presentation/EditClientView.dart";
 import "package:storedebt/Features/Edit%20Owner%20Screen/Presentation/EditOwnerView.dart";
 import "package:storedebt/Features/Home%20Screen/Presentation/HomeView.dart";
 import "package:storedebt/Features/Splash%20Screen/Presentation/SplashView.dart";
@@ -11,6 +12,7 @@ class AppRoutes {
   static String allDebtsView = "/allDebtsView";
   static String editOwnerView = "/editOwnerView";
   static String addNewDebtView = "/addNewDebtView";
+  static String editClientView = "/editClientView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -33,6 +35,10 @@ class AppRoutes {
       GoRoute(
         path: addNewDebtView,
         builder: (context, state) => const AddNewDebtView(),
+      ),
+      GoRoute(
+        path: editClientView,
+        builder: (context, state) => const EditClientView(),
       ),
     ],
   );
