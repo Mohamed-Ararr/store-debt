@@ -3,12 +3,14 @@ import "package:storedebt/Features/Edit%20Owner%20Screen/Presentation/EditOwnerV
 import "package:storedebt/Features/Home%20Screen/Presentation/HomeView.dart";
 import "package:storedebt/Features/Splash%20Screen/Presentation/SplashView.dart";
 
+import "../../Features/Add New Debt View/Presentation/AddNewDebtView.dart";
 import "../../Features/AllDebt Screen/Presentation/AllDebtsView.dart";
 
 class AppRoutes {
   static String homeView = "/homeView";
   static String allDebtsView = "/allDebtsView";
   static String editOwnerView = "/editOwnerView";
+  static String addNewDebtView = "/addNewDebtView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -27,6 +29,10 @@ class AppRoutes {
       GoRoute(
         path: editOwnerView,
         builder: (context, state) => const EditOwnerView(),
+      ),
+      GoRoute(
+        path: addNewDebtView,
+        builder: (context, state) => const AddNewDebtView(),
       ),
     ],
   );
