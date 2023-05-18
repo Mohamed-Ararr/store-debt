@@ -52,17 +52,14 @@ class TallClientCard extends StatelessWidget {
               ),
             ],
           ),
-          child: InkWell(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              width: MediaQuery.of(context).size.width * 0.28,
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
-                borderRadius: bRadius10,
-              ),
-              child: TallClientInfo(),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            width: MediaQuery.of(context).size.width * 0.28,
+            decoration: BoxDecoration(
+              border: Border.all(color: AppColors.whiteColor),
+              borderRadius: bRadius10,
             ),
+            child: TallClientInfo(),
           ),
         ),
         SizedBox(width: 10),

@@ -9,18 +9,15 @@ class DebtClientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        // margin: EdgeInsets.only(bottom: 10),
-        decoration: BoxDecoration(
-          color: AppColors.purpleColor,
-          borderRadius: bRadius10,
-        ),
-        child: Padding(
-          padding: paddingTB14RL15,
-          child: DebtClientInfo(),
-        ),
+    return Container(
+      // margin: EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: AppColors.purpleColor,
+        borderRadius: bRadius10,
+      ),
+      child: Padding(
+        padding: paddingTB14RL15,
+        child: DebtClientInfo(),
       ),
     );
   }

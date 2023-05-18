@@ -8,16 +8,13 @@ class ClientSmallCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5),
-        child: Column(
-          children: [
-            ClientInfo(),
-            PriceCard(),
-          ],
-        ),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
+        children: [
+          ClientInfo(),
+          PriceCard(),
+        ],
       ),
     );
   }
