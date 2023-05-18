@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
@@ -19,7 +21,8 @@ class DebtClientCardWithSlidable extends StatelessWidget {
             motion: const BehindMotion(),
             children: [
               SlidableAction(
-                onPressed: (context) {},
+                onPressed: (context) =>
+                    GoRouter.of(context).push(AppRoutes.editClientView),
                 borderRadius: bRadius10.copyWith(
                   topLeft: Radius.zero,
                   bottomLeft: Radius.zero,
