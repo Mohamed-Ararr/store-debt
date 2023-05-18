@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
@@ -40,23 +42,23 @@ class OwnerCard extends StatelessWidget {
                 "محمد اسلام عرعار",
                 style: AppFonts.font_18_black_bold,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                decoration: BoxDecoration(
-                  color: AppColors.lightGreen,
-                  borderRadius: bRadius10,
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("تغيير المالك"),
-                    SizedBox(width: 10),
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(FontAwesomeIcons.penToSquare),
-                    ),
-                  ],
+              InkWell(
+                onTap: () => GoRouter.of(context).push(AppRoutes.editOwnerView),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGreen,
+                    borderRadius: bRadius10,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("تغيير المالك"),
+                      SizedBox(width: 10),
+                      Icon(FontAwesomeIcons.penToSquare),
+                    ],
+                  ),
                 ),
               ),
             ],
