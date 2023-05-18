@@ -12,13 +12,13 @@ class DebtClientCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        margin: EdgeInsets.only(bottom: 10),
+        // margin: EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
           color: AppColors.purpleColor,
           borderRadius: bRadius10,
         ),
         child: Padding(
-          padding: paddingTB12RL15,
+          padding: paddingTB14RL15,
           child: DebtClientInfo(),
         ),
       ),
