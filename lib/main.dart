@@ -37,7 +37,9 @@ class DebtApp extends StatelessWidget {
         }
         return supportedLang.first;
       },
+
       theme: ThemeData(
+        brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
           backgroundColor: AppColors.purpleColor,
         ),
