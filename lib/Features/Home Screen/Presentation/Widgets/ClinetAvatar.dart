@@ -12,7 +12,7 @@ class ClientAvatar extends StatelessWidget {
       margin: EdgeInsets.only(top: 5),
       padding: EdgeInsets.all(3),
       decoration: BoxDecoration(
-        border: Border.all(),
+        border: Border.all(color: Colors.white),
         color: AppColors.beigeColor,
         borderRadius: bRadiusHalf,
       ),

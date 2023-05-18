@@ -14,6 +14,12 @@ class AppFonts {
     color: Colors.white,
   );
 
+  static TextStyle miniAppTitleStyleBlack = const TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+
   static TextStyle regular20BoldWhite = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
@@ -43,6 +49,11 @@ class AppFonts {
   static TextStyle defaultWithBoldWhite = TextStyle(
     fontWeight: FontWeight.bold,
     color: Colors.white,
+  );
+
+  static TextStyle font_15_white = TextStyle(
+    color: Colors.white,
+    fontSize: 15,
   );
 
   static TextStyle font_13 = TextStyle(
