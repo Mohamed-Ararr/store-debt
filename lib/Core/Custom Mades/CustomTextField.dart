@@ -10,16 +10,20 @@ class CustomTextField extends StatelessWidget {
       this.onChanged,
       this.onSaved,
       required this.label,
-      required this.hintText});
+      required this.hintText,
+      this.keyboardType});
 
   final Function(String)? onChanged;
   final Function(String?)? onSaved;
   final String label;
   final String hintText;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textDirection: TextDirection.rtl,
+      keyboardType: keyboardType,
       onChanged: onChanged,
       onSaved: onSaved,
       validator: (val) {

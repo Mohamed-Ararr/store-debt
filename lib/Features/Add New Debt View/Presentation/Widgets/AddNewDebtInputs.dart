@@ -4,18 +4,19 @@ import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
 import '../../../../Core/Custom Mades/CustomTextField.dart';
 
-class OwnerInputs extends StatefulWidget {
-  const OwnerInputs({super.key});
+class AddNewDebtInputs extends StatefulWidget {
+  const AddNewDebtInputs({super.key});
 
   @override
-  State<OwnerInputs> createState() => _OwnerInputsState();
+  State<AddNewDebtInputs> createState() => _AddNewDebtInputsState();
 }
 
-class _OwnerInputsState extends State<OwnerInputs> {
+class _AddNewDebtInputsState extends State<AddNewDebtInputs> {
   GlobalKey<FormState> key = GlobalKey<FormState>();
   AutovalidateMode? autovalidateMode = AutovalidateMode.disabled;
-  String? firstName;
-  String? lastName;
+  String? clientFirstName;
+  String? clientLastName;
+  String? clientDebtPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -30,24 +31,36 @@ class _OwnerInputsState extends State<OwnerInputs> {
               SizedBox(height: 40),
               CustomTextField(
                 label: "الاسم",
-                hintText: "ادخل اسمك",
+                hintText: "ادخل اسم العميل",
                 onChanged: (val) {
                   setState(() {
-                    firstName = val;
+                    clientFirstName = val;
                   });
                 },
-                onSaved: (val) => firstName = val,
+                onSaved: (val) => clientFirstName = val,
               ),
               SizedBox(height: 15),
               CustomTextField(
                 label: "اللقب",
-                hintText: "ادخل لقبك",
+                hintText: "ادخل لقب العميل",
                 onChanged: (val) {
                   setState(() {
-                    lastName = val;
+                    clientLastName = val;
                   });
                 },
-                onSaved: (val) => lastName = val,
+                onSaved: (val) => clientLastName = val,
+              ),
+              SizedBox(height: 15),
+              CustomTextField(
+                keyboardType: TextInputType.number,
+                label: "المبلغ",
+                hintText: "ادخل المبلغ",
+                onChanged: (val) {
+                  setState(() {
+                    clientDebtPrice = val;
+                  });
+                },
+                onSaved: (val) => clientDebtPrice = val,
               ),
               SizedBox(height: 40),
               CustomButton(
