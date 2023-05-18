@@ -44,6 +44,11 @@ class AppFonts {
 
   static TextStyle defaultWithBold = TextStyle(
     fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static TextStyle defaultWithBlack = TextStyle(
+    color: Colors.black,
   );
 
   static TextStyle defaultWithBoldWhite = TextStyle(

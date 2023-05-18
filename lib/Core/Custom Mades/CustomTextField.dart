@@ -5,13 +5,23 @@ import '../Style Utils/AppColors.dart';
 import '../Style Utils/AppFonts.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+  const CustomTextField(
+      {super.key,
+      this.onChanged,
+      this.onSaved,
+      required this.label,
+      required this.hintText});
+
+  final Function(String)? onChanged;
+  final Function(String?)? onSaved;
+  final String label;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value) {},
-      onSaved: (value) {},
+      onChanged: onChanged,
+      onSaved: onSaved,
       validator: (val) {
         if (val == null || val.isEmpty) {
           return "حقل الإدخال مطلوب ، املأه من فضلك!";
@@ -21,9 +31,9 @@ class CustomTextField extends StatelessWidget {
       },
       maxLength: 15,
       decoration: InputDecoration(
-        labelText: "الاسم",
+        labelText: label,
         labelStyle: AppFonts.font_18_white,
-        hintText: "ادخل اسمك",
+        hintText: hintText,
         hintStyle: AppFonts.font_15_white.copyWith(
           color: AppColors.greyColor,
         ),
