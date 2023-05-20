@@ -1,8 +1,12 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
+import '../../../../Core/Custom Mades/CustomDropdown.dart';
 import '../../../../Core/Custom Mades/CustomTextField.dart';
+import '../../../../Core/Style Utils/AppColors.dart';
+import '../../../../Core/Style Utils/AppFonts.dart';
 
 class EditClientInputs extends StatefulWidget {
   const EditClientInputs({super.key});
@@ -14,6 +18,8 @@ class EditClientInputs extends StatefulWidget {
 class _EditClientInputsState extends State<EditClientInputs> {
   GlobalKey<FormState> key = GlobalKey<FormState>();
   AutovalidateMode? autovalidateMode = AutovalidateMode.disabled;
+
+  String? x;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +49,7 @@ class _EditClientInputsState extends State<EditClientInputs> {
                 },
                 onSaved: (val) {},
               ),
+              SizedBox(height: 15),
               CustomTextField(
                 keyboardType: TextInputType.number,
                 label: "المبلغ",
@@ -52,6 +59,16 @@ class _EditClientInputsState extends State<EditClientInputs> {
                 },
                 onSaved: (val) {},
               ),
+              SizedBox(height: 15),
+              CustomDropdown(
+                label: "الدفع",
+                hintText: "عدل خيار الدفع",
+                // onChanged: (val) {
+                //   setState(() => x = val);
+                // },
+                onSaved: (val) => x = val,
+              ),
+              SizedBox(height: 25),
               CustomTextField(
                 label: "التاريخ",
                 hintText: "عدل تاريخ الدين",
@@ -65,6 +82,7 @@ class _EditClientInputsState extends State<EditClientInputs> {
                 onPressed: () {
                   if (key.currentState!.validate()) {
                     key.currentState!.save();
+                    print(x);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                   }
