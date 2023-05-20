@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:storedebt/Core/Custom%20Mades/CustomSearchDelegate.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/CustomDrawer.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/DebtsStats.dart';
@@ -32,7 +33,8 @@ class HomeViewBody extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 15),
             child: InkWell(
-              onTap: () {},
+              onTap: () =>
+                  showSearch(context: context, delegate: CustomSearch()),
               child: Icon(
                 FontAwesomeIcons.magnifyingGlass,
                 size: 20,
