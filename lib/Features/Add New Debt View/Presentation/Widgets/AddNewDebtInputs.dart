@@ -67,7 +67,7 @@ class _AddNewDebtInputsState extends State<AddNewDebtInputs> {
                   SizedBox(height: 15),
                   CustomTextField(
                     keyboardType: TextInputType.number,
-                    label: "المبلغ",
+                    label: "المبلغ (بالسنتيم)",
                     hintText: "ادخل المبلغ",
                     onChanged: (val) {
                       setState(() {

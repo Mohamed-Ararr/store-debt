@@ -67,7 +67,7 @@ class _EditClientInputsState extends State<EditClientInputs> {
               SizedBox(height: 15),
               CustomTextField(
                 keyboardType: TextInputType.number,
-                label: "المبلغ",
+                label: "المبلغ (بالسنتيم)",
                 hintText: widget.client.price,
                 onChanged: (val) {
                   setState(() {
