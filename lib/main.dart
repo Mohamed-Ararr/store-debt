@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:storedebt/Constants.dart';
 import 'package:storedebt/Core/AppLocal.dart';
 import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  await Hive.openBox(clientBox);
+  await Hive.openBox(ownerBox);
+
   runApp(const DebtApp());
 }
 
