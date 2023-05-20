@@ -39,7 +39,7 @@ class TallClientInfo extends StatelessWidget {
             color: AppColors.lightGreen,
           ),
           child: Text(
-            client.price,
+            "${client.price},00",
             style: AppFonts.font_18_black_bold.copyWith(
               color: AppColors.whiteColor,
             ),

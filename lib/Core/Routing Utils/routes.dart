@@ -1,6 +1,7 @@
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:go_router/go_router.dart";
 import "package:storedebt/Data/Cubits/Client%20Cubit/Add%20Client%20Cubit/add_client_cubit.dart";
+import "package:storedebt/Data/Models/Client%20Model/ClientModel.dart";
 import "package:storedebt/Features/Edit%20Client%20View/Presentation/EditClientView.dart";
 import "package:storedebt/Features/Edit%20Owner%20Screen/Presentation/EditOwnerView.dart";
 import "package:storedebt/Features/Home%20Screen/Presentation/HomeView.dart";
@@ -43,7 +44,8 @@ class AppRoutes {
       ),
       GoRoute(
         path: editClientView,
-        builder: (context, state) => const EditClientView(),
+        builder: (context, state) =>
+            EditClientView(client: state.extra as ClientModel),
       ),
     ],
   );

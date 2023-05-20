@@ -16,7 +16,7 @@ void main() async {
   Hive.registerAdapter(OwnerModelAdapter());
 
   await Hive.openBox<ClientModel>(clientBox);
-  await Hive.openBox(ownerBox);
+  await Hive.openBox<OwnerModel>(ownerBox);
 
   runApp(const DebtApp());
 }

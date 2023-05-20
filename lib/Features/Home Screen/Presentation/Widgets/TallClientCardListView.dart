@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storedebt/Core/General%20Utils/EmptyListWidget.dart';
+import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 
 import 'TallClientCard.dart';
@@ -13,7 +15,7 @@ class TallClientCardListView extends StatelessWidget {
       builder: (context, state) {
         if (state is ClientSuccess) {
           if (state.clientList.isEmpty) {
-            return Center(child: Text("Empty"));
+            return EmptyListWidget();
           } else {
             return Container(
               height: MediaQuery.of(context).size.height * 0.3,
@@ -30,7 +32,7 @@ class TallClientCardListView extends StatelessWidget {
         } else if (state is ClientFailure) {
           return Text(state.errorMsg);
         } else {
-          return CircularProgressIndicator();
+          return LoadingWidget();
         }
       },
     );

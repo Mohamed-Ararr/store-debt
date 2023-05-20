@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:go_router/go_router.dart';
+import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Constants.dart';
@@ -21,11 +24,15 @@ class TallClientCard extends StatelessWidget {
           direction: Axis.vertical,
           startActionPane: ActionPane(
             extentRatio: 1,
-            motion: const BehindMotion(),
+            motion: const DrawerMotion(),
             children: [
               SlidableAction(
-                onPressed: (context) =>
-                    GoRouter.of(context).push(AppRoutes.editClientView),
+                onPressed: (context) {
+                  GoRouter.of(context).push(
+                    AppRoutes.editClientView,
+                    extra: client,
+                  );
+                },
                 borderRadius: bRadius10.copyWith(
                   bottomLeft: Radius.zero,
                   bottomRight: Radius.zero,
@@ -36,14 +43,21 @@ class TallClientCard extends StatelessWidget {
                 label: 'تعديل',
               ),
               SlidableAction(
-                onPressed: (context) {},
+                onPressed: (context) {
+                  client.isPaid = !client.isPaid;
+                  client.save();
+                  BlocProvider.of<ClientCubit>(context).fetchClients();
+                },
                 backgroundColor: AppColors.lightGreen,
                 foregroundColor: Colors.white,
                 icon: Icons.paid_outlined,
-                label: 'تم الدفع',
+                label: client.isPaid ? "غير مدفوع" : "مدفوع",
               ),
               SlidableAction(
-                onPressed: (context) {},
+                onPressed: (context) {
+                  client.delete();
+                  BlocProvider.of<ClientCubit>(context).fetchClients();
+                },
                 borderRadius: bRadius10.copyWith(
                   topRight: Radius.zero,
                   topLeft: Radius.zero,

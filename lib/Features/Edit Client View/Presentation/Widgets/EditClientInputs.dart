@@ -1,5 +1,9 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
+import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
@@ -9,7 +13,9 @@ import '../../../../Core/Style Utils/AppColors.dart';
 import '../../../../Core/Style Utils/AppFonts.dart';
 
 class EditClientInputs extends StatefulWidget {
-  const EditClientInputs({super.key});
+  const EditClientInputs({super.key, required this.client});
+
+  final ClientModel client;
 
   @override
   State<EditClientInputs> createState() => _EditClientInputsState();
@@ -18,8 +24,11 @@ class EditClientInputs extends StatefulWidget {
 class _EditClientInputsState extends State<EditClientInputs> {
   GlobalKey<FormState> key = GlobalKey<FormState>();
   AutovalidateMode? autovalidateMode = AutovalidateMode.disabled;
-
-  String? x;
+  String? firstName;
+  String? lastName;
+  String? price;
+  bool? isPaid;
+  String? date;
 
   @override
   Widget build(BuildContext context) {
@@ -34,55 +43,73 @@ class _EditClientInputsState extends State<EditClientInputs> {
               SizedBox(height: 40),
               CustomTextField(
                 label: "الاسم",
-                hintText: "عدل اسم الزبون",
+                hintText: widget.client.clientFN,
                 onChanged: (val) {
-                  setState(() {});
+                  setState(() {
+                    firstName = val;
+                  });
                 },
-                onSaved: (val) {},
+                onSaved: (val) => firstName = val,
               ),
               SizedBox(height: 15),
               CustomTextField(
                 label: "اللقب",
-                hintText: "عدل لقب الزبون",
+                hintText: widget.client.clientLN,
                 onChanged: (val) {
-                  setState(() {});
+                  setState(() {
+                    lastName = val;
+                  });
                 },
-                onSaved: (val) {},
+                onSaved: (val) => lastName = val,
               ),
               SizedBox(height: 15),
               CustomTextField(
                 keyboardType: TextInputType.number,
                 label: "المبلغ",
-                hintText: "عدل مبلغ الزبون",
+                hintText: widget.client.price,
                 onChanged: (val) {
-                  setState(() {});
+                  setState(() {
+                    price = val;
+                  });
                 },
-                onSaved: (val) {},
+                onSaved: (val) => price = val,
               ),
               SizedBox(height: 15),
               CustomDropdown(
                 label: "الدفع",
-                hintText: "عدل خيار الدفع",
-                // onChanged: (val) {
-                //   setState(() => x = val);
-                // },
-                onSaved: (val) => x = val,
+                hintText: widget.client.isPaid ? "مدفوع" : "غير مدفوع",
+                onChanged: (val) {
+                  setState(() {
+                    isPaid = val == "مدفوع" ? true : false;
+                  });
+                },
+                onSaved: (val) => isPaid = val == "مدفوع" ? true : false,
               ),
               SizedBox(height: 25),
               CustomTextField(
                 label: "التاريخ",
-                hintText: "عدل تاريخ الدين",
+                hintText: widget.client.date,
                 onChanged: (val) {
-                  setState(() {});
+                  setState(() {
+                    date = val;
+                  });
                 },
-                onSaved: (val) {},
+                onSaved: (val) => date = val,
               ),
               SizedBox(height: 40),
               CustomButton(
                 onPressed: () {
                   if (key.currentState!.validate()) {
                     key.currentState!.save();
-                    print(x);
+                    widget.client.clientFN =
+                        firstName ?? widget.client.clientFN;
+                    widget.client.clientLN = lastName ?? widget.client.clientLN;
+                    widget.client.price = price ?? widget.client.clientFN;
+                    widget.client.isPaid = isPaid ?? widget.client.isPaid;
+                    widget.client.date = date ?? widget.client.date;
+                    widget.client.save();
+                    BlocProvider.of<ClientCubit>(context).fetchClients();
+                    GoRouter.of(context).pop();
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                   }

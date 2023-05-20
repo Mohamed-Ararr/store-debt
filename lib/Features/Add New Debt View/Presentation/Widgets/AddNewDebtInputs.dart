@@ -87,7 +87,7 @@ class _AddNewDebtInputsState extends State<AddNewDebtInputs> {
                           price: clientDebtPrice!,
                           isPaid: false,
                           date:
-                              "${DateTime.now().year} ${Months.months[DateTime.now().month - 1]} ${DateTime.now().day}",
+                              "${DateTime.now().day} ${Months.months[DateTime.now().month - 1]} ${DateTime.now().year}",
                         );
                         BlocProvider.of<AddClientCubit>(context)
                             .addNewClient(client);
