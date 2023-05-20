@@ -20,6 +20,11 @@ class TallClientInfo extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Text(
+          "مدفوع",
+          style: AppFonts.font_15_white,
+          textAlign: TextAlign.center,
+        ),
+        Text(
           "25 ديسمبر 2023",
           style: AppFonts.font_13_grey,
           textAlign: TextAlign.center,
