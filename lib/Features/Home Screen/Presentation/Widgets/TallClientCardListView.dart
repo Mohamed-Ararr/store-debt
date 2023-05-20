@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 
-import '../../../../Constants.dart';
-import '../../../../Core/Routing Utils/routes.dart';
-import '../../../../Core/Style Utils/AppColors.dart';
 import 'TallClientCard.dart';
 
 class TallClientCardListView extends StatelessWidget {
@@ -12,16 +9,30 @@ class TallClientCardListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        physics: BouncingScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return TallClientCard();
-        },
-      ),
+    return BlocBuilder<ClientCubit, ClientState>(
+      builder: (context, state) {
+        if (state is ClientSuccess) {
+          if (state.clientList.isEmpty) {
+            return Center(child: Text("Empty"));
+          } else {
+            return Container(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: BouncingScrollPhysics(),
+                itemCount: state.clientList.length,
+                itemBuilder: (context, index) {
+                  return TallClientCard(client: state.clientList[index]);
+                },
+              ),
+            );
+          }
+        } else if (state is ClientFailure) {
+          return Text(state.errorMsg);
+        } else {
+          return CircularProgressIndicator();
+        }
+      },
     );
   }
 }

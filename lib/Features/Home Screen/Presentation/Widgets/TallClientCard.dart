@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:go_router/go_router.dart';
+import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Routing Utils/routes.dart';
@@ -8,7 +9,9 @@ import '../../../../Core/Style Utils/AppColors.dart';
 import 'TallClientInfo.dart';
 
 class TallClientCard extends StatelessWidget {
-  const TallClientCard({super.key});
+  const TallClientCard({super.key, required this.client});
+
+  final ClientModel client;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +62,7 @@ class TallClientCard extends StatelessWidget {
               border: Border.all(color: AppColors.whiteColor),
               borderRadius: bRadius10,
             ),
-            child: TallClientInfo(),
+            child: TallClientInfo(client: client),
           ),
         ),
         SizedBox(width: 10),
