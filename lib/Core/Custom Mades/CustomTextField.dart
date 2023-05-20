@@ -11,17 +11,23 @@ class CustomTextField extends StatelessWidget {
       this.onSaved,
       required this.label,
       required this.hintText,
-      this.keyboardType});
+      this.keyboardType,
+      this.onTap,
+      this.controller});
 
   final Function(String)? onChanged;
   final Function(String?)? onSaved;
+  final Function()? onTap;
   final String label;
   final String hintText;
   final TextInputType? keyboardType;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onTap: onTap,
       textDirection: TextDirection.rtl,
       keyboardType: keyboardType,
       onChanged: onChanged,

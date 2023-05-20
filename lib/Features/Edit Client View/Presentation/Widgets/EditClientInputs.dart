@@ -9,6 +9,7 @@ import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
 import '../../../../Core/Custom Mades/CustomDropdown.dart';
 import '../../../../Core/Custom Mades/CustomTextField.dart';
+import '../../../../Core/General Utils/Months.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
 import '../../../../Core/Style Utils/AppFonts.dart';
 
@@ -27,8 +28,9 @@ class _EditClientInputsState extends State<EditClientInputs> {
   String? firstName;
   String? lastName;
   String? price;
-  bool? isPaid;
   String? date;
+  var pickedDate;
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -75,25 +77,26 @@ class _EditClientInputsState extends State<EditClientInputs> {
                 onSaved: (val) => price = val,
               ),
               SizedBox(height: 15),
-              CustomDropdown(
-                label: "الدفع",
-                hintText: widget.client.isPaid ? "مدفوع" : "غير مدفوع",
-                onChanged: (val) {
-                  setState(() {
-                    isPaid = val == "مدفوع" ? true : false;
-                  });
-                },
-                onSaved: (val) => isPaid = val == "مدفوع" ? true : false,
-              ),
-              SizedBox(height: 25),
               CustomTextField(
-                label: "التاريخ",
-                hintText: widget.client.date,
-                onChanged: (val) {
-                  setState(() {
-                    date = val;
-                  });
+                onTap: () async {
+                  DateTime? picker = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(DateTime.now().year),
+                    lastDate: DateTime(2050),
+                  );
+                  if (picker != null) {
+                    setState(() {
+                      controller.text =
+                          "${picker.day} ${Months.months[picker.month - 1]} ${picker.year}";
+                    });
+                  }
+                  //
                 },
+                keyboardType: TextInputType.none,
+                controller: controller,
+                label: "التاريخ",
+                hintText: date ?? widget.client.date,
                 onSaved: (val) => date = val,
               ),
               SizedBox(height: 40),
@@ -105,7 +108,6 @@ class _EditClientInputsState extends State<EditClientInputs> {
                         firstName ?? widget.client.clientFN;
                     widget.client.clientLN = lastName ?? widget.client.clientLN;
                     widget.client.price = price ?? widget.client.clientFN;
-                    widget.client.isPaid = isPaid ?? widget.client.isPaid;
                     widget.client.date = date ?? widget.client.date;
                     widget.client.save();
                     BlocProvider.of<ClientCubit>(context).fetchClients();
