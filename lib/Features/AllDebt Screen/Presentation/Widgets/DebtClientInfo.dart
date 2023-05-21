@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Core/Style Utils/AppFonts.dart';
 import '../../../Home Screen/Presentation/Widgets/ClinetAvatar.dart';
 
 class DebtClientInfo extends StatelessWidget {
-  const DebtClientInfo({super.key});
+  const DebtClientInfo({super.key, required this.client});
+
+  final ClientModel client;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +22,18 @@ class DebtClientInfo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "محمد عرعار",
+                  "${client.clientFN} ${client.clientLN}",
                   style: AppFonts.defaultWithBoldWhite,
                 ),
-                Text("مدفوع", style: AppFonts.font_15_white),
-                Text("25 ديسمبر 2023", style: AppFonts.font_15_white),
+                Text(client.isPaid ? "مدفوع" : "غير مدفوع",
+                    style: AppFonts.font_15_white),
+                Text(client.date, style: AppFonts.font_15_white),
               ],
             ),
           ],
         ),
         Text(
-          "1200,00 Dz",
+          "${client.price} Dz",
           style: AppFonts.defaultWithBoldWhite,
         ),
       ],
