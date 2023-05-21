@@ -33,16 +33,20 @@ class TallClientInfo extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
           decoration: BoxDecoration(
             borderRadius: bRadius10,
             color: AppColors.lightGreen,
           ),
-          child: Text(
-            "${client.price}",
-            style: AppFonts.font_18_black_bold.copyWith(
-              color: AppColors.whiteColor,
-            ),
+          child: Column(
+            children: [
+              Text(
+                "${client.price}",
+                textAlign: TextAlign.center,
+                style: AppFonts.defaultWithBoldWhite,
+              ),
+              Text("سنتيم", style: AppFonts.font_13),
+            ],
           ),
         ),
       ],
