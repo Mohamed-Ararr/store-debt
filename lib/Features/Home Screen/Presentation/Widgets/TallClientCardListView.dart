@@ -4,6 +4,7 @@ import 'package:storedebt/Core/General%20Utils/EmptyListWidget.dart';
 import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 
+import '../../../../Data/Models/Client Model/ClientModel.dart';
 import 'TallClientCard.dart';
 
 class TallClientCardListView extends StatelessWidget {
@@ -17,14 +18,17 @@ class TallClientCardListView extends StatelessWidget {
           if (state.clientList.isEmpty) {
             return EmptyListWidget();
           } else {
+            List<ClientModel> newList = [...state.clientList];
+            newList.sort((a, b) =>
+                b.orderDate.toString().compareTo(a.orderDate.toString()));
             return Container(
               height: MediaQuery.of(context).size.height * 0.3,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 physics: BouncingScrollPhysics(),
-                itemCount: state.clientList.length,
+                itemCount: newList.length,
                 itemBuilder: (context, index) {
-                  return TallClientCard(client: state.clientList[index]);
+                  return TallClientCard(client: newList[index]);
                 },
               ),
             );

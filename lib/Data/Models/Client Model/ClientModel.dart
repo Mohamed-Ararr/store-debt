@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:hive_flutter/hive_flutter.dart';
 
 part 'ClientModel.g.dart';
@@ -14,6 +15,8 @@ class ClientModel extends HiveObject {
   bool isPaid;
   @HiveField(4)
   String date;
+  @HiveField(5)
+  dynamic orderDate;
 
   ClientModel({
     required this.clientFN,
@@ -21,5 +24,6 @@ class ClientModel extends HiveObject {
     required this.price,
     required this.isPaid,
     required this.date,
+    this.orderDate,
   });
 }

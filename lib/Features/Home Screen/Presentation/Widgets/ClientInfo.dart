@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
+import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/ClinetAvatar.dart';
 
 import '../../../../Core/Style Utils/AppColors.dart';
 
 class ClientInfo extends StatelessWidget {
-  const ClientInfo({super.key});
+  const ClientInfo({super.key, required this.client});
+
+  final ClientModel client;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +29,12 @@ class ClientInfo extends StatelessWidget {
           children: [
             ClientAvatar(),
             Text(
-              "محمد اسلام عرعار",
+              "${client.clientFN} ${client.clientLN}",
               style: AppFonts.defaultWithBold,
             ),
-            Text("مدفوع", style: AppFonts.defaultWithBlack),
-            Text("25 ديسمبر 2023", style: AppFonts.defaultWithBlack),
+            Text(client.isPaid ? "مدفوع" : "غير مدفوع",
+                style: AppFonts.defaultWithBlack),
+            Text(client.date, style: AppFonts.defaultWithBlack),
           ],
         ),
       ),

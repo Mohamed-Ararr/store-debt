@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -88,7 +90,9 @@ class _AddNewDebtInputsState extends State<AddNewDebtInputs> {
                           isPaid: false,
                           date:
                               "${DateTime.now().day} ${Months.months[DateTime.now().month - 1]} ${DateTime.now().year}",
+                          orderDate: DateTime.now(),
                         );
+
                         BlocProvider.of<AddClientCubit>(context)
                             .addNewClient(client);
                       } else {

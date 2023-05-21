@@ -22,13 +22,14 @@ class ClientModelAdapter extends TypeAdapter<ClientModel> {
       price: fields[2] as String,
       isPaid: fields[3] as bool,
       date: fields[4] as String,
+      orderDate: fields[5] as dynamic,
     );
   }
 
   @override
   void write(BinaryWriter writer, ClientModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.clientFN)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class ClientModelAdapter extends TypeAdapter<ClientModel> {
       ..writeByte(3)
       ..write(obj.isPaid)
       ..writeByte(4)
-      ..write(obj.date);
+      ..write(obj.date)
+      ..writeByte(5)
+      ..write(obj.orderDate);
   }
 
   @override

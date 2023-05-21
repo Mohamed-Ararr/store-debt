@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Constants.dart';
@@ -16,6 +17,7 @@ class TallClientInfo extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
+        // Text("${client.clientId}"),
         ClientAvatar(),
         Text(
           "${client.clientFN} ${client.clientLN}",
@@ -33,7 +35,7 @@ class TallClientInfo extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           decoration: BoxDecoration(
             borderRadius: bRadius10,
             color: AppColors.lightGreen,

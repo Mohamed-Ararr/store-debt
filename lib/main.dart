@@ -8,15 +8,14 @@ import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
-import 'package:storedebt/Data/Models/Owner%20Model/OwnerModel.dart';
 
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ClientModelAdapter());
-  Hive.registerAdapter(OwnerModelAdapter());
+  // Hive.registerAdapter(OwnerModelAdapter());
 
   await Hive.openBox<ClientModel>(clientBox);
-  await Hive.openBox<OwnerModel>(ownerBox);
+  // await Hive.openBox<OwnerModel>(ownerBox);
 
   runApp(const DebtApp());
 }
