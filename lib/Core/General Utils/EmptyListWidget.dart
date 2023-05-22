@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../Style Utils/AppFonts.dart';
-
 class EmptyListWidget extends StatelessWidget {
   const EmptyListWidget({super.key, required this.style});
 

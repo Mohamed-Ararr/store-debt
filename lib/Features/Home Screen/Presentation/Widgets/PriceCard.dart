@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 

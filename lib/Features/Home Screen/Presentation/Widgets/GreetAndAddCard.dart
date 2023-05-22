@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/AddNewDebtButton.dart';
 
 import '../../../../Constants.dart';
-import '../../../../Core/AppLocal.dart';
 import '../../../../Core/Style Utils/AppColors.dart';
 
 class GreetAndAddCard extends StatelessWidget {
@@ -20,7 +19,7 @@ class GreetAndAddCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "${getLang(context, "greet-with-owner")} Mohamed\n${getLang(context, "greet-without-owner")}",
+            "مرحبا Mohamed\nأرجو أن تحظى بيوم رائع",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,

@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "${getLang(context, "app-title")}",
+          "دفتر الديون",
           style: AppFonts.miniAppTitleStyle,
         ),
         actions: [

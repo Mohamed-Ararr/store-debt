@@ -1,4 +1,3 @@
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -7,11 +6,8 @@ import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
-import '../../../../Core/Custom Mades/CustomDropdown.dart';
 import '../../../../Core/Custom Mades/CustomTextField.dart';
 import '../../../../Core/General Utils/Months.dart';
-import '../../../../Core/Style Utils/AppColors.dart';
-import '../../../../Core/Style Utils/AppFonts.dart';
 
 class EditClientInputs extends StatefulWidget {
   const EditClientInputs({super.key, required this.client});

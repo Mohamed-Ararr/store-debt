@@ -41,16 +41,16 @@ class DebtApp extends StatelessWidget {
           // Locale("fr", "FR"),
         ],
         locale: Locale("ar", "DZ"),
-        localeResolutionCallback: (currentLang, supportedLang) {
-          if (currentLang != null) {
-            for (Locale local in supportedLang) {
-              if (local.languageCode == currentLang.languageCode) {
-                return currentLang;
-              }
-            }
-          }
-          return supportedLang.first;
-        },
+        // localeResolutionCallback: (currentLang, supportedLang) {
+        //   if (currentLang != null) {
+        //     for (Locale local in supportedLang) {
+        //       if (local.languageCode == currentLang.languageCode) {
+        //         return currentLang;
+        //       }
+        //     }
+        //   }
+        //   return supportedLang.first;
+        // },
         theme: ThemeData(
           brightness: Brightness.dark,
           appBarTheme: AppBarTheme(

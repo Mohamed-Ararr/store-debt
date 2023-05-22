@@ -7,7 +7,6 @@ import 'package:storedebt/Features/AllDebt%20Screen/Presentation/Widgets/DebtLis
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/AddNewDebtButton.dart';
 
 import '../../../../Core/Style Utils/AppColors.dart';
-import 'DebtClientCard.dart';
 
 class AllDebtsViewBody extends StatelessWidget {
   const AllDebtsViewBody({super.key});

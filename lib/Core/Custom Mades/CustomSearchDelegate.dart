@@ -9,10 +9,8 @@ import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Core/Style%20Utils/AppFonts.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
-import 'package:storedebt/Features/AllDebt%20Screen/Presentation/Widgets/DebtClientCard.dart';
 
 import '../../Features/AllDebt Screen/Presentation/Widgets/DebtClientCardWithSlidable.dart';
-import '../../Features/AllDebt Screen/Presentation/Widgets/DebtListView.dart';
 
 class CustomSearch extends SearchDelegate {
   @override

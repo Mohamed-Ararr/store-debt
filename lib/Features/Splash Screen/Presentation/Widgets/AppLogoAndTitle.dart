@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Core/AppLocal.dart';
 import '../../../../Core/Style Utils/AppFonts.dart';
 
 class AppLogoAndTitle extends StatelessWidget {
@@ -16,7 +15,7 @@ class AppLogoAndTitle extends StatelessWidget {
         ),
         SizedBox(height: 15),
         Text(
-          "${getLang(context, 'app-title')}",
+          "دفتر الديون",
           style: AppFonts.appTitleStyle,
         ),
       ],
