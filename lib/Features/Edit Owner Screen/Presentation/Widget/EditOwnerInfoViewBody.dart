@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storedebt/Features/Edit%20Owner%20Screen/Presentation/Widget/OnwerInputs.dart';
+import 'package:storedebt/Features/Edit%20Owner%20Screen/Presentation/Widget/OwnerInputs.dart';
 
 import '../../../../Core/Style Utils/AppFonts.dart';
 

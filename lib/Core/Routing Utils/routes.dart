@@ -1,6 +1,7 @@
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:go_router/go_router.dart";
 import "package:storedebt/Data/Cubits/Client%20Cubit/Add%20Client%20Cubit/add_client_cubit.dart";
+import "package:storedebt/Data/Cubits/Owner%20Cubit/Add%20Owner%20Cubit/add_owner_cubit.dart";
 import "package:storedebt/Data/Models/Client%20Model/ClientModel.dart";
 import "package:storedebt/Features/Edit%20Client%20View/Presentation/EditClientView.dart";
 import "package:storedebt/Features/Edit%20Owner%20Screen/Presentation/EditOwnerView.dart";
@@ -33,7 +34,10 @@ class AppRoutes {
       ),
       GoRoute(
         path: editOwnerView,
-        builder: (context, state) => const EditOwnerView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => AddOwnerCubit(),
+          child: const EditOwnerView(),
+        ),
       ),
       GoRoute(
         path: addNewDebtView,

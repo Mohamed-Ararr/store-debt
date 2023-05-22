@@ -7,15 +7,18 @@ import 'package:storedebt/Core/AppLocal.dart';
 import 'package:storedebt/Core/Routing%20Utils/routes.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
+import 'package:storedebt/Data/Cubits/Owner%20Cubit/Fetch%20Owner%20Cubit/owner_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
+
+import 'Data/Models/Owner Model/OwnerModel.dart';
 
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ClientModelAdapter());
-  // Hive.registerAdapter(OwnerModelAdapter());
+  Hive.registerAdapter(OwnerModelAdapter());
 
   await Hive.openBox<ClientModel>(clientBox);
-  // await Hive.openBox<OwnerModel>(ownerBox);
+  await Hive.openBox<OwnerModel>(ownerBox);
 
   runApp(const DebtApp());
 }
@@ -25,8 +28,15 @@ class DebtApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ClientCubit()..fetchClients(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ClientCubit()..fetchClients(),
+        ),
+        BlocProvider(
+          create: (context) => OwnerCubit()..fetchOwner(),
+        ),
+      ],
       child: MaterialApp.router(
         routerConfig: AppRoutes.routes,
         localizationsDelegates: [

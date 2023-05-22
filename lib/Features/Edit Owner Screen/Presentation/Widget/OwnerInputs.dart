@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:storedebt/Data/Cubits/Owner%20Cubit/Fetch%20Owner%20Cubit/owner_cubit.dart';
+import 'package:storedebt/Data/Models/Owner%20Model/OwnerModel.dart';
 
 import '../../../../Constants.dart';
 import '../../../../Core/Custom Mades/CustomButton.dart';
 import '../../../../Core/Custom Mades/CustomTextField.dart';
+import '../../../../Data/Cubits/Owner Cubit/Add Owner Cubit/add_owner_cubit.dart';
 
 class OwnerInputs extends StatefulWidget {
   const OwnerInputs({super.key});
@@ -54,6 +59,14 @@ class _OwnerInputsState extends State<OwnerInputs> {
                 onPressed: () {
                   if (key.currentState!.validate()) {
                     key.currentState!.save();
+                    OwnerModel owner = OwnerModel(
+                      ownerFN: firstName!,
+                      ownerLN: lastName!,
+                    );
+                    BlocProvider.of<AddOwnerCubit>(context).addOwner(owner);
+                    print(owner.ownerFN);
+                    print(owner.ownerLN);
+                    GoRouter.of(context).pop();
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                   }
