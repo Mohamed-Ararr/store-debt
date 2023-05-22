@@ -27,7 +27,7 @@ class GreetAndAddCard extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          AddNewDebtButton(),
+          AddNewDebtButton(backgroundColor: AppColors.whiteColor),
         ],
       ),
     );
