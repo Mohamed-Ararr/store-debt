@@ -8,9 +8,9 @@ class OwnerInitial extends OwnerState {}
 class OwnerLoading extends OwnerState {}
 
 class OwnerSuccess extends OwnerState {
-  final OwnerModel ownerList;
+  final OwnerModel owner;
 
-  OwnerSuccess(this.ownerList);
+  OwnerSuccess(this.owner);
 }
 
 class OwnerFailure extends OwnerState {

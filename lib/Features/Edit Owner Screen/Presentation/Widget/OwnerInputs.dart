@@ -64,8 +64,7 @@ class _OwnerInputsState extends State<OwnerInputs> {
                       ownerLN: lastName!,
                     );
                     BlocProvider.of<AddOwnerCubit>(context).addOwner(owner);
-                    print(owner.ownerFN);
-                    print(owner.ownerLN);
+                    BlocProvider.of<OwnerCubit>(context).fetchOwner();
                     GoRouter.of(context).pop();
                   } else {
                     autovalidateMode = AutovalidateMode.always;

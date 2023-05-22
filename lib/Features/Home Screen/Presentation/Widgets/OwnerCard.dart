@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storedebt/Core/Custom%20Mades/CustomEditOwnerButton.dart';
 import 'package:storedebt/Core/Custom%20Mades/CustomOwnerAvatar.dart';
+import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
+import 'package:storedebt/Data/Cubits/Owner%20Cubit/Fetch%20Owner%20Cubit/owner_cubit.dart';
 
 import '../../../../Core/Style Utils/AppFonts.dart';
 
@@ -23,9 +26,19 @@ class OwnerCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomOwnerAvatar(),
-              Text(
-                "محمد اسلام عرعار",
-                style: AppFonts.font_18_black_bold,
+              BlocBuilder<OwnerCubit, OwnerState>(
+                builder: (context, state) {
+                  if (state is OwnerSuccess) {
+                    return Text(
+                      "${state.owner.ownerFN} ${state.owner.ownerLN}",
+                      style: AppFonts.font_18_black_bold,
+                    );
+                  } else if (state is OwnerFailure) {
+                    return Center(child: Text(state.errorMsg));
+                  } else {
+                    return LoadingWidget();
+                  }
+                },
               ),
               CustomEditOwnerButton(),
             ],

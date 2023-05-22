@@ -14,7 +14,8 @@ class OwnerCubit extends Cubit<OwnerState> {
     emit(OwnerLoading());
     try {
       Box<OwnerModel> owBox = Hive.box(ownerBox);
-      OwnerModel owner = owBox.values.toList().elementAt(0);
+      OwnerModel owner =
+          owBox.values.toList().elementAt(owBox.values.toList().length - 1);
       emit(OwnerSuccess(owner));
     } catch (e) {
       emit(OwnerFailure(e.toString()));

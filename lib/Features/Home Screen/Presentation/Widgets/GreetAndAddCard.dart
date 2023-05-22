@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
+import 'package:storedebt/Data/Cubits/Owner%20Cubit/Fetch%20Owner%20Cubit/owner_cubit.dart';
 import 'package:storedebt/Features/Home%20Screen/Presentation/Widgets/AddNewDebtButton.dart';
 
 import '../../../../Constants.dart';
@@ -18,13 +21,22 @@ class GreetAndAddCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            "مرحبا Mohamed\nأرجو أن تحظى بيوم رائع",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
-            ),
+          BlocConsumer<OwnerCubit, OwnerState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is OwnerSuccess) {
+                return Text(
+                  "مرحبا ${state.owner.ownerFN}\nأرجو أن تحظى بيوم رائع",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                );
+              } else {
+                return LoadingWidget();
+              }
+            },
           ),
           AddNewDebtButton(backgroundColor: AppColors.whiteColor),
         ],
