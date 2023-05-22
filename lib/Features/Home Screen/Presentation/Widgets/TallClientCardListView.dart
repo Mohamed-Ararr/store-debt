@@ -4,6 +4,7 @@ import 'package:storedebt/Core/General%20Utils/EmptyListWidget.dart';
 import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 
+import '../../../../Core/Style Utils/AppFonts.dart';
 import '../../../../Data/Models/Client Model/ClientModel.dart';
 import 'TallClientCard.dart';
 
@@ -16,7 +17,7 @@ class TallClientCardListView extends StatelessWidget {
       builder: (context, state) {
         if (state is ClientSuccess) {
           if (state.clientList.isEmpty) {
-            return EmptyListWidget();
+            return EmptyListWidget(style: AppFonts.regular20BoldWhite);
           } else {
             List<ClientModel> newList = [...state.clientList];
             newList.sort((a, b) =>

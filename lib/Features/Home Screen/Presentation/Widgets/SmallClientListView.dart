@@ -5,6 +5,7 @@ import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
+import '../../../../Core/Style Utils/AppFonts.dart';
 import 'ClientSmallCard.dart';
 
 class SmallClientListView extends StatelessWidget {
@@ -16,7 +17,7 @@ class SmallClientListView extends StatelessWidget {
       builder: (context, state) {
         if (state is ClientSuccess) {
           if (state.clientList.isEmpty) {
-            return EmptyListWidget();
+            return EmptyListWidget(style: AppFonts.regular20BoldWhite);
           } else {
             List<ClientModel> newList = [...state.clientList];
             newList.sort((a, b) =>

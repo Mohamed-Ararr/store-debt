@@ -8,6 +8,7 @@ import 'package:storedebt/Core/General%20Utils/LoadingWidget.dart';
 import 'package:storedebt/Core/Style%20Utils/AppColors.dart';
 import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/client_cubit.dart';
 import 'package:storedebt/Features/AllDebt%20Screen/Presentation/Widgets/DebtClientCardWithSlidable.dart';
+import '../../../../Core/Style Utils/AppFonts.dart';
 import '../../../../Data/Models/Client Model/ClientModel.dart';
 import 'DebtClientCard.dart';
 
@@ -20,7 +21,7 @@ class DebtListView extends StatelessWidget {
       builder: (context, state) {
         if (state is ClientSuccess) {
           if (state.clientList.isEmpty) {
-            return EmptyListWidget();
+            return EmptyListWidget(style: AppFonts.regular20BoldBlack);
           } else {
             List<ClientModel> newList = [...state.clientList];
             newList.sort((a, b) =>

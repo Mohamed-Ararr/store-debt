@@ -26,13 +26,13 @@ class PriceCard extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Dz",
-            style: AppFonts.font_15_white.copyWith(color: Colors.black),
+            client.price,
+            style: AppFonts.font_18_black_bold,
           ),
           SizedBox(width: 5),
           Text(
-            client.price,
-            style: AppFonts.font_18_black_bold,
+            "ستنيم",
+            style: AppFonts.font_13.copyWith(color: Colors.black),
           ),
           // Container(
           //   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),

@@ -26,6 +26,12 @@ class AppFonts {
     color: Colors.white,
   );
 
+  static TextStyle regular20BoldBlack = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+
   static TextStyle font_18_white = TextStyle(
     fontSize: 18,
     color: Colors.white,

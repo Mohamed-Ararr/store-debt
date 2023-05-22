@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import '../Style Utils/AppFonts.dart';
 
 class EmptyListWidget extends StatelessWidget {
-  const EmptyListWidget({super.key});
+  const EmptyListWidget({super.key, required this.style});
+
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text(
         "لا توجد ديون حاليا",
-        style: AppFonts.regular20BoldWhite,
+        style: style,
       ),
     );
   }
