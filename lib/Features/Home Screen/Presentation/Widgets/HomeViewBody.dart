@@ -55,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
               GreetAndAddCard(),
               SizedBox(height: 25),
               Text(
-                "${getLang(context, 'biggest-debts')}",
+                "أكبر الديون",
                 style: AppFonts.regular20BoldWhite,
               ),
               SizedBox(height: 10),

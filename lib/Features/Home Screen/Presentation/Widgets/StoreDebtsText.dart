@@ -14,14 +14,14 @@ class StoreDebtsText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "${getLang(context, "store-debts")}",
+          "اخر التعاملات",
           style: AppFonts.regular20BoldWhite,
         ),
         InkWell(
           onTap: () => GoRouter.of(context).push(AppRoutes.allDebtsView),
           child: Text(
-            "${getLang(context, "see-all-debts")}",
-            style: AppFonts.font_14_grey,
+            "تصفح الكل",
+            style: AppFonts.font_15_white,
           ),
         ),
       ],
