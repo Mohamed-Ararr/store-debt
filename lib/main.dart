@@ -44,6 +44,7 @@ class DebtApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerConfig: AppRoutes.routes,
         localizationsDelegates: [
           AppLocale.delegate,
