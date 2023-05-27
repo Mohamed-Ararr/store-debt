@@ -40,7 +40,6 @@ class _DebtsStatsState extends State<DebtsStats> {
       listener: (context, state) {},
       builder: (context, state) {
         state is ClientSuccess ? clients = [...state.clientList] : clients = [];
-
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -65,13 +64,15 @@ class _DebtsStatsState extends State<DebtsStats> {
                     ),
                   ),
                   Container(
-                    width: widget.isDebt
-                        ? (MediaQuery.of(context).size.width * 0.6) *
-                            calculateDebtStats(clients)[1].round() /
-                            100
-                        : (MediaQuery.of(context).size.width * 0.6) *
-                            calculateDebtStats(clients)[0].round() /
-                            100,
+                    width: clients.isEmpty
+                        ? 0
+                        : widget.isDebt
+                            ? (MediaQuery.of(context).size.width * 0.6) *
+                                calculateDebtStats(clients)[1].round() /
+                                100
+                            : (MediaQuery.of(context).size.width * 0.6) *
+                                calculateDebtStats(clients)[0].round() /
+                                100,
                     height: 10,
                     decoration: BoxDecoration(
                       color: AppColors.lightRed,
@@ -84,9 +85,11 @@ class _DebtsStatsState extends State<DebtsStats> {
             Expanded(
               flex: 1,
               child: Text(
-                widget.isDebt
-                    ? "${calculateDebtStats(clients)[1].round()}%"
-                    : "${calculateDebtStats(clients)[0].round()}%",
+                clients.isEmpty
+                    ? "0%"
+                    : widget.isDebt
+                        ? "${calculateDebtStats(clients)[1].round()}%"
+                        : "${calculateDebtStats(clients)[0].round()}%",
                 textAlign: TextAlign.end,
                 style: AppFonts.defaultWithBoldWhite,
               ),
