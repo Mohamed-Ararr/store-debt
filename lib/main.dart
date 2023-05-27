@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -10,6 +11,7 @@ import 'package:storedebt/Data/Cubits/Client%20Cubit/Fetch%20Client%20Cubit/clie
 import 'package:storedebt/Data/Cubits/Owner%20Cubit/Fetch%20Owner%20Cubit/owner_cubit.dart';
 import 'package:storedebt/Data/Models/Client%20Model/ClientModel.dart';
 
+import 'Core/General Utils/stateObersrver.dart';
 import 'Data/Models/Owner Model/OwnerModel.dart';
 
 void main() async {
@@ -19,6 +21,10 @@ void main() async {
 
   await Hive.openBox<ClientModel>(clientBox);
   await Hive.openBox<OwnerModel>(ownerBox);
+
+  Bloc.observer = StateObserver();
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(const DebtApp());
 }

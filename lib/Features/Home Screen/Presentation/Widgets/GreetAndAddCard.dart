@@ -12,6 +12,7 @@ class GreetAndAddCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String ownerFN;
     return Container(
       padding: paddingAll15,
       decoration: BoxDecoration(
@@ -24,18 +25,17 @@ class GreetAndAddCard extends StatelessWidget {
           BlocConsumer<OwnerCubit, OwnerState>(
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is OwnerSuccess) {
-                return Text(
-                  "مرحبا ${state.owner.ownerFN}\nأرجو أن تحظى بيوم رائع",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                );
-              } else {
-                return LoadingWidget();
-              }
+              state is OwnerSuccess
+                  ? ownerFN = state.owner.ownerFN
+                  : ownerFN = "User";
+              return Text(
+                "مرحبا ${ownerFN}\nأرجو أن تحظى بيوم رائع",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
+              );
             },
           ),
           AddNewDebtButton(backgroundColor: AppColors.whiteColor),
